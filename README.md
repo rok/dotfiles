@@ -29,6 +29,7 @@ Dotfiles
 5. Install Latex-suite
    ```
    sudo apt-get install vim-latexsuite
+   sudo vim-addons -w install latex-suite
    ```
 
 5. Latex-Suite laguage support
