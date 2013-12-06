@@ -25,3 +25,8 @@ Dotfiles
    ruby extconf.rb
    make
    ```
+
+5. Latex-Suite laguage support
+   ```
+   sudo apt-get install texlive-lang-european 
+   ```
