@@ -30,6 +30,7 @@ Bundle 'Valloric/YouCompleteMe'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 " non-GitHub repos
 Bundle 'wincent/Command-T'
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
