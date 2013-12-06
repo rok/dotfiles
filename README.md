@@ -17,3 +17,11 @@ Dotfiles
    sudo apt-get install CMake (if necessary)
    ./install.sh --clang-completer
    ```
+
+4. Compile Command-T
+   ```
+   sudo apt-get install ruby-dev
+   cd ~/.vim/bundle/Command-T/ruby/command-t/
+   ruby extconf.rb
+   make
+   ```
