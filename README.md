@@ -4,7 +4,8 @@ Dotfiles
 1. Set up:
 
    ```
-   $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+   curl -L 'https://github.com/rok/dotfiles/raw/master/vimrc' > ~/.vimrc
+   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
    ```
 
 2. Install configured bundles:
