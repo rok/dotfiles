@@ -26,6 +26,11 @@ Dotfiles
    make
    ```
 
+5. Install Latex-suite
+   ```
+   sudo apt-get install vim-latexsuite
+   ```
+
 5. Latex-Suite laguage support
    ```
    sudo apt-get install texlive-lang-european 
