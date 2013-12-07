@@ -15,6 +15,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+set sw=2
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
