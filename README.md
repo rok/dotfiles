@@ -27,13 +27,8 @@ Dotfiles
    make
    ```
 
-5. Install Latex-suite
+5. Install Latex-suite, laguage support and eps2pdf
    ```
-   sudo apt-get install vim-latexsuite
+   sudo apt-get install vim-latexsuite texlive-lang-european texlive-font-utils
    sudo vim-addons -w install latex-suite
-   ```
-
-5. Latex-Suite laguage support
-   ```
-   sudo apt-get install texlive-lang-european 
    ```
