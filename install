@@ -12,17 +12,29 @@ for file in "$here"/*; do
   fi
 done
 
-sudo apt-get install CMake ruby-dev vim-latexsuite texlive-lang-european texlive-font-utils
-
+sudo apt-get install CMake ruby-dev vim-latexsuite texlive-lang-european texlive-font-utils zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+sudo chsh -s `which zsh`
 sudo vim-addons -w install latex-suite || echo "Latex suite already installed"
+git clone git://github.com/github/hub.git ~/hub || echo "hub already cloned"
+cd ~/hub/ && sudo rake install || echo "hub not installed"
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle || echo "Vundle already installed"
+echo
+echo "Symlinks created."
+read -p "Do you want to install vim bundles? [Yy]" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
 
-vim +BundleInstall +qall || echo "Cannot install vim bundles"
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle || echo "Vundle already installed"
 
-cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer || echo "Cannot compile YMC"
+  vim +BundleInstall +qall || echo "Cannot install vim bundles"
 
-cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make || echo "Cannot compile Command-T"
+  cd ~/.vim/bundle/YouCompleteMe
+  ./install.sh --clang-completer || echo "Cannot compile YMC"
 
-vim +BundleInstall +qall || echo "Cannot install all vim bundles"
+  cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make || echo "Cannot compile Command-T"
+
+  vim +BundleInstall +qall || echo "Cannot install all vim bundles"
+
+fi
