@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -e
+
+here="$(cd "${0%/*}"; pwd)"
+
+for file in "$here"/*; do
+  name="$(basename "$file" .md)"
+  [[ $name = bin ]] && dotname="$name" || dotname=".${name}"
+
+  if ! [[ "install LICENSE README" =~ $name || $name =~ ".plist" || -e ~/$dotname || -d $file/.git ]]; then
+    ln -sfv ${file#$HOME/} "${HOME}/${dotname}"
+  fi
+done
+
+sudo apt-get install CMake ruby-dev vim-latexsuite texlive-lang-european texlive-font-utils
+
+sudo vim-addons -w install latex-suite || echo "Latex suite already installed"
+
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle || echo "Vundle already installed"
+
+vim +BundleInstall +qall || echo "Cannot install vim bundles"
+
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer || echo "Cannot compile YMC"
+
+cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make || echo "Cannot compile Command-T"
+
+vim +BundleInstall +qall || echo "Cannot install all vim bundles"
