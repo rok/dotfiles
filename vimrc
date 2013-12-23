@@ -1,5 +1,6 @@
 :colorscheme koehler
-
+" :set guioptions-=Tr
+set hlsearch
 filetype plugin on
 set shellslash
 set grepprg=grep\ -nH\ $*
@@ -15,6 +16,11 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 12 
+" let g:Powerline_symbols = 'fancy'
+set laststatus=2
+set noshowmode
+
 set sw=2
 " let Vundle manage Vundle
 " required! 
@@ -28,6 +34,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
