@@ -7,9 +7,20 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+export TERM=xterm-256color
+stty -ixon
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch -v'
+alias st='git status -sb'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
