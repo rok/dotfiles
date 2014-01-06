@@ -204,9 +204,12 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tomtom/tcomment_vim'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'railscasts'
+Bundle 'rake.vim'
+Bundle 'bash-support.vim'
 " non-GitHub repos
 
 " filetype plugin indent on     " required!
