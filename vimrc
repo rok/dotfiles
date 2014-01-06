@@ -10,8 +10,6 @@ else
   set background=dark
 endif
 
-color koehler
-
 " 256 colors requred for Powerline
 set t_Co =256
 
@@ -136,13 +134,14 @@ nmap <leader>P PV`]=
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>gt :CommandTTag<cr>
-" map <leader>f :CommandT<cr>
-map <leader>F :CommandT %%<cr>
-let g:CommandTCancelMap='<ESC>'
-let g:CommandTMatchWindowAtTop=1
-let g:CommandTMaxHeight=10
-let g:CommandTMinHeight=2
+" map CtrlP to <leader>t
+map <leader>t :CtrlP<cr>
+
+" NERDTree mapping
+nmap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" toggle between last open buffers
+nnoremap <leader><leader> <c-^>
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -162,9 +161,6 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-" toggle between last open buffers
-nnoremap <leader><leader> <c-^>
-
 set splitright
 set splitbelow
 
@@ -174,7 +170,6 @@ map <Right> :echo "no!"<cr>
 map <Up>    :echo "no!"<cr>
 map <Down>  :echo "no!"<cr>
 
-" set shellslash
 set grepprg=grep\ -nH\ $*
 
 let g:tex_flavor='latex'
@@ -182,13 +177,14 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 
 set iskeyword+=:
 
-" filetype off
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 12
 set guifont=PragmataPro\ for\ Powerline\
+if has('gui_running')
+  set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+endif
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set noshowmode
@@ -206,11 +202,12 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
 " vim-scripts repos
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'railscasts'
 " non-GitHub repos
-Bundle 'wincent/Command-T'
 
 " filetype plugin indent on     " required!
 "
@@ -223,3 +220,5 @@ Bundle 'wincent/Command-T'
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
 
+"color koehler
+color railscasts

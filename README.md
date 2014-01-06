@@ -19,19 +19,28 @@
 * `<C-j/k/h/l>` - switch between splits (no need to prepend `<C-w>`)
 * `Q` - format lines
 
-### File switching (Command-T)
+### File switching (CtrlP)
 
-* `<leader><leader>` alternates between two most recent buffers
+* `<leader><leader><Esc>` alternates between two most recent buffers
 * `<leader>t` - jump to file
-* `<leader>F` - search in directory of current buffer
-* `<leader>b` - search buffer list
-* `<leader>gt` - search tags
-* `<C-s>` - open the selected file in a new split window
-* `<C-v>` - open the selected file in a new vertical split window
-* `<C-t>` - open the selected file in a new tab
-* `<C-j>` - select next file in the file listing
-* `<C-k>` - select previous file in the file listing
-* `<C-f>` - flush file cache
+
+#### Once CtrlP is open:
+
+* `<F5>` - purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+* `<c-f>`, `<c-b>` - cycle between modes.
+* `<c-d>` - switch to filename only search instead of full path.
+* `<c-r>` - switch to regexp mode.
+* `<c-j>`, `<c-k>` - navigate the result list.
+* `<c-t>` or `<c-v>`, `<c-x>` open the selected entry in a new tab or in a new split.
+* `<c-n>`, `<c-p>` select the next/previous string in the prompt's history.
+* `<c-y>` create a new file and its parent directories.
+* `<c-z>` mark/unmark multiple files and `<c-o>` to open them.
+
+### NERDTree
+
+* `<F2>` - toggles NERDTree pane
+* `<i>` - opens file in horizontal split
+* `<s>` - opens file in vertical split
 
 ## Tmux
 
