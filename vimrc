@@ -36,7 +36,7 @@ set updatecount=0
 set backupskip=/tmp/*,/private/tmp/*"
 
 "" Whitespace
-set nowrap                        " don't wrap lines
+" set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
@@ -180,7 +180,6 @@ set iskeyword+=:
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 12
 set guifont=PragmataPro\ for\ Powerline\
 if has('gui_running')
   set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
@@ -205,6 +204,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'plasticboy/vim-markdown'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'railscasts'
