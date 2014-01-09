@@ -4,11 +4,6 @@ filetype plugin indent on
 
 syntax enable
 
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
 
 " 256 colors requred for Powerline
 set t_Co =256
@@ -180,10 +175,9 @@ set iskeyword+=:
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-set guifont=PragmataPro\ for\ Powerline\
-if has('gui_running')
-  set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
-endif
+"set guifont=PragmataPro\ for\ Powerline\
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+set background=light
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set noshowmode

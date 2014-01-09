@@ -33,8 +33,6 @@ then
   cd ~/.vim/bundle/YouCompleteMe
   ./install.sh --clang-completer || echo "Cannot compile YMC"
 
-  cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make || echo "Cannot compile Command-T"
-
   vim +BundleInstall +qall || echo "Cannot install all vim bundles"
 
 fi
